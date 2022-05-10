@@ -19,11 +19,13 @@ from rest_framework import routers
 
 from endereco.views import EnderecoViewSet
 from instituicaoEnsino.views import InstituicaoEnsinoViewSet
+from curso.views import CursoViewSet
 
 router =  routers.SimpleRouter()
 
 router.register('endereco', EnderecoViewSet)
 router.register('instituicaoEnsino', InstituicaoEnsinoViewSet)
+router.register('curso', CursoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
