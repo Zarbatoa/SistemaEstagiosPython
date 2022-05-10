@@ -18,10 +18,12 @@ from django.urls import path, include
 from rest_framework import routers
 
 from endereco.views import EnderecoViewSet
+from instituicaoEnsino.views import InstituicaoEnsinoViewSet
 
 router =  routers.SimpleRouter()
 
 router.register('endereco', EnderecoViewSet)
+router.register('instituicaoEnsino', InstituicaoEnsinoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
