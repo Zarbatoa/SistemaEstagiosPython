@@ -21,6 +21,7 @@ from endereco.views import EnderecoViewSet
 from estagiario.views import EstagiarioViewSet
 from instituicaoEnsino.views import InstituicaoEnsinoViewSet
 from curso.views import CursoViewSet
+from unidadeConcedente.views import UnidadeConcedenteViewSet
 
 router =  routers.SimpleRouter()
 
@@ -28,6 +29,7 @@ router.register('endereco', EnderecoViewSet)
 router.register('instituicaoEnsino', InstituicaoEnsinoViewSet)
 router.register('curso', CursoViewSet)
 router.register('estagiario', EstagiarioViewSet)
+router.register('unidadeConcedente', UnidadeConcedenteViewSet)
 
 
 urlpatterns = [

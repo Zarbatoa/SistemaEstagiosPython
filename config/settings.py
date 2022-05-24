@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'endereco',
     'instituicaoEnsino',
     'curso',
-    'estagiario'
+    'estagiario',
+    'unidadeConcedente'
 ]
 
 MIDDLEWARE = [
