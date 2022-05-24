@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from unidadeConcedente.models import UnidadeConcedente
-from unidadeConcedente.serializers import UnidadeConcedenteGetSerializer, UnidadeConcedente, UnidadeConcedenteSerializer
+from unidadeConcedente.serializers import UnidadeConcedenteGetSerializer, UnidadeConcedenteSerializer
 
 class UnidadeConcedenteViewSet(ModelViewSet):
 

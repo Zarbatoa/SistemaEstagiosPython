@@ -19,6 +19,7 @@ from rest_framework import routers
 
 from endereco.views import EnderecoViewSet
 from estagiario.views import EstagiarioViewSet
+from estagio.views import EstagioViewSet
 from instituicaoEnsino.views import InstituicaoEnsinoViewSet
 from curso.views import CursoViewSet
 from unidadeConcedente.views import UnidadeConcedenteViewSet
@@ -30,6 +31,7 @@ router.register('instituicaoEnsino', InstituicaoEnsinoViewSet)
 router.register('curso', CursoViewSet)
 router.register('estagiario', EstagiarioViewSet)
 router.register('unidadeConcedente', UnidadeConcedenteViewSet)
+router.register('estagio', EstagioViewSet)
 
 
 urlpatterns = [
