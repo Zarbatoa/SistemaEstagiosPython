@@ -18,6 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from endereco.views import EnderecoViewSet
+from estagiario.views import EstagiarioViewSet
 from instituicaoEnsino.views import InstituicaoEnsinoViewSet
 from curso.views import CursoViewSet
 
@@ -26,6 +27,8 @@ router =  routers.SimpleRouter()
 router.register('endereco', EnderecoViewSet)
 router.register('instituicaoEnsino', InstituicaoEnsinoViewSet)
 router.register('curso', CursoViewSet)
+router.register('estagiario', EstagiarioViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
