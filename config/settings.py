@@ -30,13 +30,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Swagger drf docs in: https://drf-yasg.readthedocs.io/en/stable/readme.html
 INSTALLED_APPS = [
+    'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
+    'drf_yasg',                    # also added for swagger
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'endereco',
     'instituicaoEnsino',
     'curso',
@@ -127,3 +129,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LimitOffset Pagination, https://www.django-rest-framework.org/api-guide/pagination/
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
+}

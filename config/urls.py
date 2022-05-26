@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
+from rest_framework import routers, permissions
+
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
 
 from endereco.views import EnderecoViewSet
 from estagiario.views import EstagiarioViewSet
@@ -23,6 +26,7 @@ from estagio.views import EstagioViewSet
 from instituicaoEnsino.views import InstituicaoEnsinoViewSet
 from curso.views import CursoViewSet
 from unidadeConcedente.views import UnidadeConcedenteViewSet
+
 
 router =  routers.SimpleRouter()
 
@@ -34,7 +38,22 @@ router.register('unidadeConcedente', UnidadeConcedenteViewSet)
 router.register('estagio', EstagioViewSet)
 
 
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Snippets API",
+      default_version='v1',
+      description="Test description",
+      terms_of_service="https://www.google.com/policies/terms/",
+      contact=openapi.Contact(email="contact@snippets.local"),
+      license=openapi.License(name="BSD License"),
+   ),
+   public=True,
+   permission_classes=[permissions.AllowAny],
+)
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui')
 ]
