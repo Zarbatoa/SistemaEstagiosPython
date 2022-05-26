@@ -10,8 +10,8 @@ from instituicaoEnsino.models import InstituicaoEnsino
 from instituicaoEnsino.serializers import InstituicaoEnsinoGetSerializer, InstituicaoEnsinoSerializer
 
 class InstituicaoEnsinoViewSet(ModelViewSet):
-    # permission_classes = (IsAuthenticated, DjangoModelPermissions)
-    # authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)# DjangoModelPermissions)
+    authentication_classes = (TokenAuthentication,)
 
     queryset = InstituicaoEnsino.objects.all()
     serializer_class = InstituicaoEnsinoSerializer

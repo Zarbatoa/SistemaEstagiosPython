@@ -2,7 +2,12 @@ from rest_framework.viewsets import ModelViewSet
 from estagiario.models import Estagiario
 from estagiario.serializers import EstagiarioGetSerializer, EstagiarioSerializer
 
+from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions
+from rest_framework.authentication import TokenAuthentication
+
 class EstagiarioViewSet(ModelViewSet):
+    permission_classes = (IsAuthenticated,)# DjangoModelPermissions)
+    authentication_classes = (TokenAuthentication,)
 
     queryset = Estagiario.objects.all()
     serializer_class = EstagiarioSerializer

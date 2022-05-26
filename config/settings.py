@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "usuario.UsuarioModel"
 
 # Application definition
 
@@ -34,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
     'drf_yasg',                    # also added for swagger
+    'rest_framework.authtoken',    # authentication
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +46,8 @@ INSTALLED_APPS = [
     'curso',
     'estagiario',
     'unidadeConcedente',
-    'estagio'
+    'estagio',
+    'usuario'
 ]
 
 MIDDLEWARE = [

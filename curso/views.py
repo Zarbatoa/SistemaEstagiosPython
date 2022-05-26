@@ -10,8 +10,8 @@ from curso.models import Curso
 from curso.serializers import CursoGetSerializer, CursoSerializer
 
 class CursoViewSet(ModelViewSet):
-    # permission_classes = (IsAuthenticated, DjangoModelPermissions)
-    # authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)# DjangoModelPermissions)
+    authentication_classes = (TokenAuthentication,)
 
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer

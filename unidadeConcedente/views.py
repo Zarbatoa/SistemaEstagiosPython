@@ -2,7 +2,12 @@ from rest_framework.viewsets import ModelViewSet
 from unidadeConcedente.models import UnidadeConcedente
 from unidadeConcedente.serializers import UnidadeConcedenteGetSerializer, UnidadeConcedenteSerializer
 
+from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions
+from rest_framework.authentication import TokenAuthentication 
+
 class UnidadeConcedenteViewSet(ModelViewSet):
+    permission_classes = (IsAuthenticated,)# DjangoModelPermissions)
+    authentication_classes = (TokenAuthentication,)
 
     queryset = UnidadeConcedente.objects.all()
     serializer_class = UnidadeConcedenteSerializer
